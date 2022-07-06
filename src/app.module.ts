@@ -4,12 +4,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     ProductModule,
     MongooseModule.forRoot('mongodb://localhost/store'),
-    UserModule, // 1.2 Setup the database
+    UserModule,
+    AuthModule, // 1.2 Setup the database
   ],
   controllers: [AppController],
   providers: [AppService],
